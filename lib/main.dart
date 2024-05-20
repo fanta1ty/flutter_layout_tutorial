@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
           body: const SingleChildScrollView(
             child: Column(
               children: [
-                Text('Hello World'),
+                TitleSection(
+                  name: 'Oeschinen Lake Campground',
+                  location: 'Kandersteg, Switzerland',
+                )
               ],
             ),
           )),
