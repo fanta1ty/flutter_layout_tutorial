@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                 TitleSection(
                   name: 'Oeschinen Lake Campground',
                   location: 'Kandersteg, Switzerland',
-                )
+                ),
               ],
             ),
           )),
@@ -74,9 +74,59 @@ class TitleSection extends StatelessWidget {
             Icons.star,
             color: Colors.red[500],
           ),
-          const Text('41'),
+          const Text('41')
         ],
       ),
+    );
+  }
+}
+
+class ButtonSection extends StatelessWidget {
+  const ButtonSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final Color color = Theme.of(context).primaryColor;
+
+    return ButtonWithText(
+      color: color,
+      icon: Icons.abc,
+      label: "Test",
+    );
+  }
+}
+
+class ButtonWithText extends StatelessWidget {
+  final Color color;
+  final IconData icon;
+  final String label;
+
+  const ButtonWithText({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon),
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        )
+      ],
     );
   }
 }
