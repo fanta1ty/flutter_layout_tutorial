@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
                   name: 'Oeschinen Lake Campground',
                   location: 'Kandersteg, Switzerland',
                 ),
+                ButtonSection(),
               ],
             ),
           )),
@@ -88,10 +89,27 @@ class ButtonSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
 
-    return ButtonWithText(
-      color: color,
-      icon: Icons.abc,
-      label: "Test",
+    return SizedBox(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          ButtonWithText(
+            color: color,
+            icon: Icons.call,
+            label: 'CALL',
+          ),
+          ButtonWithText(
+            color: color,
+            icon: Icons.near_me,
+            label: 'ROUTE',
+          ),
+          ButtonWithText(
+            color: color,
+            icon: Icons.share,
+            label: 'SHARE',
+          ),
+        ],
+      ),
     );
   }
 }
